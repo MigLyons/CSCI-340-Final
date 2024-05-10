@@ -1,0 +1,18 @@
+CREATE TABLE Organization (
+    orgId INTEGER CONSTRAINT PK_ORGANIZATION_ORGID PRIMARY KEY,
+    [name] VARCHAR(50) NOT NULL,
+    paymentDetails VARCHAR(100) NOT NULL,
+    [table] INTEGER NOT NULL,
+    headCount INT NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    paymentStatus BIT NOT NULL,
+    phoneNumber VARCHAR(10) NOT NULL
+);
+
+INSERT INTO Organization (orgId, [name], paymentDetails, [table], headCount, email, paymentStatus, phoneNumber) VALUES
+(1, 'ABC Company', 'Credit Card', 10, 50, 'abc@example.com', 1, '1234567890'),
+(2, 'XYZ Corporation', 'Cash', 8, 40, 'xyz@example.com', 0, '9876543210'),
+(3, 'DEF Organization', 'Debit Card', 12, 60, 'def@example.com', 1, '9876543210'),
+(4, 'GHI Foundation', 'Bank Transfer', 6, 30, 'ghi@example.com', 1, '1234567890'),
+(5, 'JKL Association', 'Cash', 14, 70, 'jkl@example.com', 0, '9876543210'),
+(6, 'MNO Group', 'Credit Card', 4, 20, 'mno@example.com', 1, '1234567890');

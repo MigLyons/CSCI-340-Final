@@ -1,0 +1,26 @@
+CREATE Table Thing (
+    thingId INTEGER CONSTRAINT PK_THING PRIMARY KEY,
+    purchaseId INTEGER CONSTRAINT FK_PURCHASE REFERENCES PURCHASE(purchaseId),
+    value INTEGER NOT NULL,
+    donorId INTEGER CONSTRAINT FK_DONOR_THING REFERENCES DONOR(DONORID),
+    description VARCHAR(100),
+    title VARCHAR(50),
+    purchaserId INTEGER CONSTRAINT FK_PURCHASER_THING REFERENCES ATTENDEE(attendeeId),
+);
+
+INSERT INTO Thing (thingId, purchaseId, value, donorId, description, title, purchaserId) VALUES
+(1, 1, 200, 1, 'Antique vase', 'Decorative vase', 1),
+(2, 2, 150, 2, 'Oil painting', 'Landscape painting', 2),
+(3, 3, 100, 3, 'Vintage book', 'Classic novel', 3),
+(4, 4, 250, 4, 'Handmade quilt', 'Quilted blanket', 4),
+(5, 5, 300, 5, 'Wooden sculpture', 'Abstract sculpture', 5),
+(6, 6, 120, 1, 'Battery powered chainsaw', 'Makita, comes with 2 batteries', 6),
+(7, 7, 180, 2, 'Crystal vase', 'Flower vase', 7);
+
+ALTER TABLE mg167598.THING
+DROP CONSTRAINT FK_DONOR_THING;
+
+ALTER TABLE mg167598.THING
+ADD	CONSTRAINT FK_DONOR_THING
+	FOREIGN KEY (donorId) REFERENCES donor(donorId)
+	ON DELETE CASCADE ON UPDATE NO ACTION;

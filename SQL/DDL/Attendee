@@ -1,0 +1,25 @@
+   CREATE TABLE mg167598.ATTENDEE
+   (
+   	attendeeId INTEGER CONSTRAINT PK_ATTENDEE_ATTENDEEID PRIMARY KEY,
+   	[name] VARCHAR(50) NOT NULL,
+   	phoneNumber CHAR(10) NOT NULL,
+   	paymentMethod VARCHAR(100) NOT NULL,
+   	EmailAddress VARCHAR(50) NOT NULL,
+   	[address] VARCHAR(100) NOT NULL,
+   	mealChoice CHAR(3) NOT NULL,
+   	plusOne BIT NOT NULL,
+   	paymentStatus BIT NOT NULL,
+   	attended BIT NOT NULL,
+   	organization INTEGER //FK
+   	tableId INTEGER NOT NULL //FK
+   );
+
+   INSERT INTO mg167598.ATTENDEE (attendeeId, [name], phoneNumber, paymentMethod, EmailAddress, [address], mealChoice, plusOne, paymentStatus, attended, organization, tableId) VALUES
+   (1, 'John Doe', '1234567890', 'Credit Card', 'john@example.com', '123 Main St', 'Veg', 0, 1, 1, 'ABC Company', 1),
+   (2, 'Jane Smith', '9876543210', 'Cash', 'jane@example.com', '456 Oak St', 'Non', 1, 0, 0, 'XYZ Corporation', 2),
+   (3, 'Alice Johnson', '5556667777', 'Credit Card', 'alice@example.com', '789 Elm St', 'Veg', 1, 1, 1, 'ABC Company', 1),
+   (4, 'Bob Brown', '1112223333', 'Cash', 'bob@example.com', '321 Pine St', 'Non', 0, 0, 0, 'DEF Organization', 3),
+   (5, 'Eve Wilson', '9998887777', 'Credit Card', 'eve@example.com', '654 Birch St', 'Veg', 1, 1, 1, 'ABC Company', 1),
+   (6, 'Charlie Miller', '7778889999', 'Cash', 'charlie@example.com', '987 Maple St', 'Non', 0, 0, 1, 'XYZ Corporation', 2),
+   (7, 'Grace Lee', '3334445555', 'Credit Card', 'grace@example.com', '159 Walnut St', 'Veg', 1, 1, 0, 'DEF Organization', 3),
+   (8, 'David Wilson', '2223334444', 'Cash', 'david@example.com', '753 Cedar St', 'Non', 0, 1, 1, 'ABC Company', 1);

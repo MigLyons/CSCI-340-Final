@@ -1,0 +1,17 @@
+CREATE TABLE mg167598.COST (
+	costId INTEGER CONSTRAINT PK_COST PRIMARY KEY,
+	vendor INTEGER CONSTRAINT FK_VENDOR REFERENCES VENDOR(vendorId),
+	total INTEGER NOT NULL,
+	paid BIT NOT NULL,
+	);
+
+INSERT INTO mg167598.COST (costId, vendor, total, paid) VALUES
+(1, 1, 500, 1),
+(2, 2, 300, 0),
+(3, 3, 700, 1),
+(4, 4, 400, 1),
+(5, 5, 600, 0),
+(6, 1, 800, 1),
+(7, 2, 200, 0),
+(8, 3, 900, 1),
+(9, 4, 1000, 1);

@@ -1,0 +1,16 @@
+CREATE TABLE mg167598.VENDOR (
+    vendorId INTEGER CONSTRAINT PK_VENDOR_VENDORID PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    phoneNumber VARCHAR(10) NOT NULL,
+    service VARCHAR(100) NOT NULL,
+    total INTEGER NOT NULL,
+    paid BIT NOT NULL,
+    donorName INTEGER CONSTRAINT FK_VENDOR_DONORKEY FOREIGN KEY REFERENCES DONOR(donorId),
+);
+
+INSERT INTO mg167598.VENDOR (vendorId, name, phoneNumber, service, total, paid, donorName) VALUES
+(1, 'ABC Catering', '5551112222', 'Catering', 1500, 1, 1),
+(2, 'XYZ Florists', '5553334444', 'Floral arrangements', 800, 0, 2),
+(3, 'DEF Event Rentals', '5555556666', 'Equipment rental', 1200, 1, 3),
+(4, 'GHI Photography', '5557778888', 'Photography services', 2000, 1, 4),
+(5, 'JKL Entertainment', '5559990000', 'Entertainment', 1000, 0, 5);

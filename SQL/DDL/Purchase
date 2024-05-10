@@ -1,0 +1,17 @@
+CREATE TABLE mg167598.Purchase (
+    purchaseId INTEGER CONSTRAINT PK_PURCHASE PRIMARY KEY,
+    total INTEGER NOT NULL,
+    purchaser INTEGER CONSTRAINT FK_PURCHASER REFERENCES ATTENDEE(attendeeId)
+);
+
+INSERT INTO mg167598.Purchase (purchaseId, total, purchaser) VALUES
+(1, 100, 1),
+(2, 150, 2),
+(3, 200, 3),
+(4, 250, 4),
+(5, 300, 5),
+(6, 350, 6),
+(7, 400, 7),
+(8, 450, 8),
+(9, 500, 5),
+(10, 550, 8);

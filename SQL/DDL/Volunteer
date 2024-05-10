@@ -1,0 +1,14 @@
+CREATE TABLE Volunteer (
+    volId INTEGER CONSTRAINT PK_VOLUNTEER PRIMARY KEY,
+    position VARCHAR(35) NOT NULL,
+    availability VARCHAR(50) NOT NULL,
+    hoursWorked INTEGER DEFAULT 0,
+    attendeeID INTEGER CONSTRAINT FK_ATTENDEE FOREIGN KEY REFERENCES ATTENDEE(attendeeId),
+);
+
+INSERT INTO Volunteer (volId, position, availability, hoursWorked, attendeeID) VALUES
+(1, 'Event Coordinator', 'Weekdays after 5pm', 10, 1),
+(2, 'Greeter', 'Weekends all day', 8, 2),
+(3, 'Food Server', 'Weekdays and weekends', 12, 3),
+(4, 'Setup Crew', 'Weekends only', 6, 4),
+(5, 'Cleanup Crew', 'Weekdays after 6pm', 8, 5);

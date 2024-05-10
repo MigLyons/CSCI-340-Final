@@ -1,0 +1,13 @@
+CREATE TABLE mg167598.DONOR (
+    donorId INTEGER CONSTRAINT PK_DONOR PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    address VARCHAR(100) NOT NULL,
+    phoneNumber VARCHAR(10) NOT NULL,
+);
+
+INSERT INTO mg167598.DONOR (donorId, name, address, phoneNumber) VALUES
+(1, 'Alice Johnson', '123 Maple St', '5551112222'),
+(2, 'Bob Smith', '456 Oak St', '5553334444'),
+(3, 'Catherine Brown', '789 Pine St', '5555556666'),
+(4, 'David Wilson', '321 Birch St', '5557778888'),
+(5, 'Emma Davis', '654 Cedar St', '5559990000');
